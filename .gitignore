@@ -1,0 +1,3 @@
+# Ignore the target directory in dsa_rust project
+target/
+/.idea
