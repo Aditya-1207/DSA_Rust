@@ -10,16 +10,26 @@ pub fn count_digits(num:i32) -> usize {
     // return count;
 
     //2.Slightly Better
+    // if num == 0 {
+    //     return 1
+    // }
+    // let mut  count = 1;
+    // let mut n = num.abs();
+    // while n > 10 {
+    //     n /= 10;
+    //     count += 1;
+    // }
+    // count
+
+    //3.Optimised approach : Use log 10 base
     if num == 0 {
         return 1
     }
-    let mut  count = 1;
-    let mut n = num.abs();
-    while n > 10 {
-        n /= 10;
-        count += 1;
-    }
-    count
+    //Get the log10 base of the abs|num|
+    let count = num.abs().ilog10() as usize;
+
+    //add 1 as log10 (power  of 10) would be 1 less digit and return it
+    count+1
 }
 
 pub fn main()  {
